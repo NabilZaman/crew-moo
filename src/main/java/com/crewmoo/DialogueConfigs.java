@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import com.crewmoo.DialogueTransformer.FallbackBehavior;
 
 import net.runelite.api.NPC;
-import net.runelite.client.plugins.Plugin;
 
 public class DialogueConfigs {
 
