@@ -25,13 +25,7 @@ public class CrewMooPlugin extends Plugin {
 
     @Override
     protected void startUp() throws Exception {
-        log.debug("CrewMoo started!");
         dialogueConfigs = new DialogueConfigs(config);
-    }
-
-    @Override
-    protected void shutDown() throws Exception {
-        log.debug("CrewMoo stopped!");
     }
 
     private boolean isMatchingNPC(Actor actor) {
@@ -55,10 +49,8 @@ public class CrewMooPlugin extends Plugin {
     public void onOverheadTextChanged(OverheadTextChanged event) {
         Actor actor = event.getActor();
         String overheadText = event.getOverheadText();
-        // log.debug("Overhead text changed: {} -> {}", overheadText, actor.getName());
         if (isMatchingNPC(actor) && isValidText(overheadText)) {
             NPC npc = (NPC) actor;
-            log.debug("The text is from an npc!");
             handleOverheadText(npc, overheadText);
         }
 

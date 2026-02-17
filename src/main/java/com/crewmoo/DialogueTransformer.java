@@ -44,13 +44,10 @@ public class DialogueTransformer {
     private String fallback(String original) {
         switch (fallbackBehaviorSupplier.get()) {
             case MOO_ALL:
-                log.debug("Applying MOO_ALL fallback to: {}", original);
                 return mooAllTransform(original);
             case LONG_MOO:
-                log.debug("Applying LONG_MOO fallback to: {}", original);
                 return longMooTransform(original);
             default:
-                log.debug("Keeping ORIGINAL text: {}", original);
                 return original;
         }
     }
